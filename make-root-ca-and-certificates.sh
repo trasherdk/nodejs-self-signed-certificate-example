@@ -44,6 +44,7 @@ openssl x509 \
   -days 500
 
 # Create a public key, for funzies
+# see https://gist.github.com/coolaj86/f6f36efce2821dfb046d
 openssl rsa \
   -in certs/server/my-server.key.pem \
   -pubout -out certs/client/my-server.pub
