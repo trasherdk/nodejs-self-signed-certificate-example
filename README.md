@@ -10,6 +10,8 @@ See
 [the explanation](https://github.com/coolaj86/node-ssl-root-cas/wiki/Painless-Self-Signed-Certificates-in-node.js) for
 the many details.
 
+Also, you may be interested in [coolaj86/nodejs-ssl-trusted-peer-example](https://github.com/coolaj86/nodejs-ssl-trusted-peer-example).
+
 Test for yourself
 ---
 
