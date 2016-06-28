@@ -15,10 +15,10 @@ require('ssl-root-cas')
   ;
 
 options = {
-  key: fs.readFileSync(path.join(__dirname, 'certs', 'server', 'my-server.key.pem'))
+  key: fs.readFileSync(path.join(__dirname, 'certs', 'server', 'privkey.pem'))
 // You don't need to specify `ca`, it's done by `ssl-root-cas`
 //, ca: [ fs.readFileSync(path.join(__dirname, 'certs', 'server', 'my-root-ca.crt.pem'))]
-, cert: fs.readFileSync(path.join(__dirname, 'certs', 'server', 'my-server.crt.pem'))
+, cert: fs.readFileSync(path.join(__dirname, 'certs', 'server', 'fullchain.pem'))
 };
 
 
@@ -31,5 +31,5 @@ server = https.createServer(options, app).listen(port, function () {
   port = server.address().port;
   console.log('Listening on https://127.0.0.1:' + port);
   console.log('Listening on https://' + server.address().address + ':' + port);
-  console.log('Listening on https://local.ldsconnect.org:' + port);
+  console.log('Listening on https://localhost.daplie.com:' + port);
 });
