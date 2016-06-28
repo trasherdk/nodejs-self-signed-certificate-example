@@ -52,3 +52,4 @@ openssl rsa \
 # Put things in their proper place
 rsync -a certs/ca/my-root-ca.crt.pem certs/server/chain.pem
 rsync -a certs/ca/my-root-ca.crt.pem certs/client/chain.pem
+cat certs/server/cert.pem certs/server/chain.pem > certs/server/fullchain.pem
