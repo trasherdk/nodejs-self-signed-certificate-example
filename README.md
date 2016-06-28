@@ -41,10 +41,10 @@ bash test.sh
 
 ### Create certificates for your FQDN
 
-`local.ldsconnect.org` points to `localhost`, so it's ideal for your first test.
+`localhost.daplie.com` points to `localhost`, so it's ideal for your first test.
 
 ```bash
-bash make-root-ca-and-certificates.sh 'local.ldsconnect.org'
+bash make-root-ca-and-certificates.sh 'localhost.daplie.com'
 ```
 
 ```
@@ -55,9 +55,8 @@ certs/
 │   └── my-root-ca.srl
 ├── client
 │   ├── chain.pem
-│   └── my-server.pub
+│   └── pubkey.pem
 ├── server
-│   ├── my-root-ca.crt.pem
 │   ├── cert.pem
 │   ├── chain.pem
 │   ├── fullchain.pem
