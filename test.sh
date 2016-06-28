@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bash make-root-ca-and-certificates.sh 'local.ldsconnect.org'
+bash make-root-ca-and-certificates.sh 'localhost.daplie.com'
 echo ""
 
 echo ""
@@ -10,21 +10,21 @@ sleep 1
 
 echo ""
 echo ""
-node ./request-without-warnings.js 8043 'local.ldsconnect.org'
+node ./request-without-warnings.js 8043 'localhost.daplie.com'
 echo -n " - without warnings, love node.js' https"
 echo ""
 sleep 1
 
 echo ""
-curl https://local.ldsconnect.org:8043 \
-  --cacert certs/client/my-root-ca.crt.pem
+curl https://localhost.daplie.com:8043 \
+  --cacert certs/client/chain.pem
 echo -n " - without warnings, love cURL"
 echo ""
 sleep 1
 
 # For lots of output about the ssl connection try -v
 #curl -v https://local.ldsconnect.org:8043 \
-#  --cacert certs/client/my-root-ca.crt.pem
+#  --cacert certs/client/chain.pem
 
 kill ${NODE_PID}
 echo ""
