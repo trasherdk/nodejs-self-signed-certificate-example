@@ -6,7 +6,7 @@ The end off all your self-signed certificate woes (in node.js at least)
 This is an easy-as-git-clone example that will get you on your way without
 any `DEPTH_ZERO_SELF_SIGNED_CERT` or `SSL certificate problem: Invalid certificate chain` headaches.
 
-See 
+See
 [the explanation](https://github.com/coolaj86/node-ssl-root-cas/wiki/Painless-Self-Signed-Certificates-in-node.js) for
 the many details.
 
@@ -85,13 +85,16 @@ node ./request-without-warnings.js 8043
 Test (warning free) with cURL
 
 ```bash
-curl -v https://localhost.daplie.com \
-  --cacert client/chain.pem
+curl -v https://localhost.daplie.com:8043 \
+  --cacert certs/client/chain.pem
 ```
+
+Note: on macOS curl's `--cacert` option may not work properly
+and so you may need to add the cert to the system keychain (described below)
 
 Visit in a web browser
 
-<https://localhost.daplie.com>
+<https://localhost.daplie.com:8043>
 
 To get rid of the warnings, simply add the certificate in the `client` folder
 to your list of certificates by alt-clicking "Open With => Keychain Access"
@@ -103,7 +106,7 @@ You do have to set `Always Trust` a few times
 Now season to taste
 ---
 
-You can poke around in the files for generating the certificates, 
+You can poke around in the files for generating the certificates,
 but all you really have to do is replace `localhost.daplie.com`
 with your very own domain name.
 
