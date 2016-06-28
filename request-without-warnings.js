@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-var https = require('https')
-  , fs = require('fs')
-  , path = require('path')
-  , ca = fs.readFileSync(path.join(__dirname, 'certs', 'client', 'my-root-ca.crt.pem'))
-  , port = process.argv[2] || 8043
-  , hostname = process.argv[3] || 'local.ldsconnect.org'
-  ;
+var https = require('https');
+var fs = require('fs');
+var path = require('path');
+var ca = fs.readFileSync(path.join(__dirname, 'certs', 'client', 'chain.pem'));
+var port = process.argv[2] || 8043;
+var hostname = process.argv[3] || 'localhost.daplie.com';
 
 var options = {
   host: hostname
