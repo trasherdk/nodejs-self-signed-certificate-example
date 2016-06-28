@@ -1,6 +1,6 @@
 {
   "name": "nodejs-self-signed-certificate-example",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The end off all your self-sign certificate woes (in node.js at least)",
   "main": "serve.js",
   "scripts": {
@@ -28,6 +28,5 @@
   },
   "homepage": "https://github.com/coolaj86/nodejs-self-signed-certificate-example",
   "dependencies": {
-    "ssl-root-cas": "^1.1.4"
   }
 }
