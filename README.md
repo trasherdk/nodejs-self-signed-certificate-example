@@ -55,9 +55,8 @@ certs/
 │   └── my-root-ca.srl
 ├── client
 │   ├── chain.pem
-│   └── my-server.pub
+│   └── pubkey.pem
 ├── server
-│   ├── my-root-ca.crt.pem
 │   ├── cert.pem
 │   ├── chain.pem
 │   ├── fullchain.pem
