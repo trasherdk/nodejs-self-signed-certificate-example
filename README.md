@@ -54,14 +54,16 @@ certs/
 │   ├── my-root-ca.key.pem
 │   └── my-root-ca.srl
 ├── client
-│   ├── my-root-ca.crt.pem
+│   ├── chain.pem
 │   └── my-server.pub
 ├── server
 │   ├── my-root-ca.crt.pem
-│   ├── my-server.crt.pem
-│   └── my-server.key.pem
+│   ├── cert.pem
+│   ├── chain.pem
+│   ├── fullchain.pem
+│   └── privkey.pem
 └── tmp
-    └── my-server.csr.pem
+    └── csr.pem
 ```
 
 ### Run the server
@@ -83,17 +85,17 @@ node ./request-without-warnings.js 8043
 Test (warning free) with cURL
 
 ```bash
-curl -v https://local.ldsconnect.org \
-  --cacert client/my-root-ca.crt.pem
+curl -v https://localhost.daplie.com \
+  --cacert client/chain.pem
 ```
 
 Visit in a web browser
 
-<https://local.ldsconnect.org>
+<https://localhost.daplie.com>
 
 To get rid of the warnings, simply add the certificate in the `client` folder
 to your list of certificates by alt-clicking "Open With => Keychain Access"
-on `my-root-ca.crt.pem`
+on `chain.pem`
 
 You do have to set `Always Trust` a few times
 [as explained](http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.U8RqrI1dVd8) by Rob Peck.
@@ -102,7 +104,7 @@ Now season to taste
 ---
 
 You can poke around in the files for generating the certificates, 
-but all you really have to do is replace `local.ldsconnect.org`
+but all you really have to do is replace `localhost.daplie.com`
 with your very own domain name.
 
 But where's the magic?
@@ -127,9 +129,9 @@ Other SSL Resources
 Zero-Config clone 'n' run (tm) Repos:
 
 
-* [io.js / node.js HTTPS SSL Example](https://github.com/coolaj86/nodejs-ssl-example)
-* [io.js / node.js HTTPS SSL Self-Signed Certificate Example](https://github.com/coolaj86/nodejs-self-signed-certificate-example)
-* [io.js / node.js HTTPS SSL Trusted Peer Client Certificate Example](https://github.com/coolaj86/nodejs-ssl-trusted-peer-example)
+* [node.js HTTPS SSL Example](https://github.com/coolaj86/nodejs-ssl-example)
+* [node.js HTTPS SSL Self-Signed Certificate Example](https://github.com/coolaj86/nodejs-self-signed-certificate-example)
+* [node.js HTTPS SSL Trusted Peer Client Certificate Example](https://github.com/coolaj86/nodejs-ssl-trusted-peer-example)
 * [SSL Root CAs](https://github.com/coolaj86/node-ssl-root-cas)
 
 Articles
