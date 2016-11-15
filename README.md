@@ -125,6 +125,74 @@ So instead of trying to work through eleventeen brazillion errors
 about self-signed certs, you can just create an authority and then
 add the authority to your chain (viola, now it's trusted).
 
+Client Authentication
+====
+
+In the example above, the server trusts the client without the need for the client to be authenticated.
+So, a common enhancement to the example above would be to add client authentication.
+To add client authentication, it's necessary to generate a client key and have it signed by the CA defined above.
+Execute `make-client-key-certificate.sh` to generate key and certificate.
+To use generated key and certificate, `key`, `cert` and `passphrase` TLS options need to be added, e.g.:
+
+```
+var ca = fs.readFileSync(path.join(__dirname, 'certs', 'client', 'chain.pem'));
+var key = fs.readFileSync(path.join(__dirname, 'certs', 'client-auth', 'privkey.pem'));
+var passphrase = 'secret';
+var cert = fs.readFileSync(path.join(__dirname, 'certs', 'client-auth', 'cert.pem'));
+
+var options = {
+  host: hostname
+, port: port
+, path: '/'
+, ca: ca
+, key: key
+, passphrase: passphrase
+, cert: cert
+};
+```
+
+Generating Java Key Stores
+====
+
+If the server component is written in Java, the server needs to be plugged with a Java KeyStore containing security certificates.
+In the example above, the `fullchain.pem` file needs to be converted into a Java KeyStore file.
+To create a Java KeyStore file, the JDK needs to be installed and have `keytool` utility in the path.
+To do that, please follow these instructions:
+
+    $ mkdir certs/java/server
+    $ openssl pkcs12 \
+      -export \
+      -inkey certs/server/privkey.pem \
+      -in certs/server/fullchain.pem \
+      -name test \
+      -out certs/java/server/keystore_server.p12
+    $ keytool \
+      -importkeystore \
+      -srckeystore certs/java/server/keystore_server.p12 \
+      -srcstoretype pkcs12 \
+      -destkeystore certs/java/server/keystore_server.jks
+
+Trust Store for Client Authentication
+----
+
+If using client authentication, it is necessary for the server to trust to the client.
+To do that, it's necessary for a trust store to be created that contains the client's public key.
+Such a trust store can be created using these steps:
+
+    $ rsync -a certs/ca/my-root-ca.crt.pem certs/client-auth/chain.pem
+    $ cat certs/client-auth/cert.pem certs/client-auth/chain.pem > certs/client-auth/fullchain.pem
+    $ openssl pkcs12
+      \-export
+      \-inkey certs/client-auth/privkey.pem
+      \-in certs/client-auth/fullchain.pem
+      \-name test
+      \-out certs/infinispan/trustore_server.p12
+    $ keytool
+      \-importkeystore
+      \-srckeystore certs/infinispan/trustore_server.p12
+      \-srcstoretype pkcs12
+      \-destkeystore certs/infinispan/trustore_server.jks
+
 Other SSL Resources
 =========
 
