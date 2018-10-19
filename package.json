@@ -1,6 +1,6 @@
 {
   "name": "nodejs-self-signed-certificate-example",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The end off all your self-sign certificate woes (in node.js at least)",
   "main": "serve.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/coolaj86/nodejs-self-signed-certificate-example.git"
+    "url": "https://git.coolaj86.com/coolaj86/nodejs-self-signed-certificate-example.git"
   },
   "keywords": [
     "nodejs",
@@ -24,9 +24,9 @@
   "author": "AJ ONeal <awesome@coolaj86.com> (https://coolaj86.com)",
   "license": "Apache-2",
   "bugs": {
-    "url": "https://github.com/coolaj86/nodejs-self-signed-certificate-example/issues"
+    "url": "https://git.coolaj86.com/coolaj86/nodejs-self-signed-certificate-example/issues"
   },
-  "homepage": "https://github.com/coolaj86/nodejs-self-signed-certificate-example",
+  "homepage": "https://git.coolaj86.com/coolaj86/nodejs-self-signed-certificate-example",
   "dependencies": {
   }
 }

@@ -10,7 +10,7 @@ See
 [the explanation](https://github.com/coolaj86/node-ssl-root-cas/wiki/Painless-Self-Signed-Certificates-in-node.js) for
 the many details.
 
-Also, you may be interested in [coolaj86/nodejs-ssl-trusted-peer-example](https://github.com/coolaj86/nodejs-ssl-trusted-peer-example).
+Also, you may be interested in [coolaj86/nodejs-ssl-trusted-peer-example](https://git.coolaj86.com/coolaj86/nodejs-ssl-trusted-peer-example).
 
 Test for yourself
 ---
@@ -28,7 +28,7 @@ example
 ### Get the repo
 
 ```bash
-git clone git@github.com:coolaj86/nodejs-self-signed-certificate-example.git
+git clone https://git.coolaj86.com/coolaj86/nodejs-self-signed-certificate-example.git
 pushd nodejs-self-signed-certificate-example
 npm install
 ```
@@ -132,7 +132,7 @@ Zero-Config clone 'n' run (tm) Repos:
 
 
 * [node.js HTTPS SSL Example](https://github.com/coolaj86/nodejs-ssl-example)
-* [node.js HTTPS SSL Self-Signed Certificate Example](https://github.com/coolaj86/nodejs-self-signed-certificate-example)
+* [node.js HTTPS SSL Self-Signed Certificate Example](https://git.coolaj86.com/coolaj86/nodejs-self-signed-certificate-example)
 * [node.js HTTPS SSL Trusted Peer Client Certificate Example](https://github.com/coolaj86/nodejs-ssl-trusted-peer-example)
 * [SSL Root CAs](https://github.com/coolaj86/node-ssl-root-cas)
 
