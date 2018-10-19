@@ -134,6 +134,7 @@ Zero-Config clone 'n' run (tm) Repos:
 * [node.js HTTPS SSL Example](https://github.com/coolaj86/nodejs-ssl-example)
 * [node.js HTTPS SSL Self-Signed Certificate Example](https://git.coolaj86.com/coolaj86/nodejs-self-signed-certificate-example)
 * [node.js HTTPS SSL Trusted Peer Client Certificate Example](https://github.com/coolaj86/nodejs-ssl-trusted-peer-example)
+* [node.js HTTPS SSL module for Loopback](https://www.npmjs.com/package/loopback-ssl)
 * [SSL Root CAs](https://github.com/coolaj86/node-ssl-root-cas)
 
 Articles
