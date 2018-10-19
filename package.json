@@ -1,6 +1,6 @@
 {
   "name": "nodejs-self-signed-certificate-example",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The end off all your self-sign certificate woes (in node.js at least)",
   "main": "serve.js",
   "scripts": {
